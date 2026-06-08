@@ -133,11 +133,11 @@ section{position:relative;z-index:1}
 .vid-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .vid-wrap{position:relative;overflow:hidden;background:var(--dark2)}
 .vid-wrap video{width:100%;max-height:460px;object-fit:cover;display:block}
-.vid-btn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(8,6,4,.4);cursor:pointer;transition:background .3s}
-.vid-btn:hover{background:rgba(8,6,4,.2)}
-.vid-circle{width:64px;height:64px;border:1px solid rgba(201,168,76,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s}
-.vid-btn:hover .vid-circle{background:rgba(201,168,76,.15);border-color:var(--gold)}
-.vid-icon{color:var(--gold);font-size:1.6rem;margin-left:5px}
+.vid-btn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(8,6,4,.35);cursor:pointer;transition:background .3s}
+.vid-btn:hover{background:rgba(8,6,4,.15)}
+.vid-circle{width:64px;height:64px;border:1px solid rgba(201,168,76,.7);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s;background:rgba(8,6,4,.4)}
+.vid-btn:hover .vid-circle{background:rgba(201,168,76,.2);border-color:var(--gold)}
+.vid-icon{color:var(--gold);font-size:1.3rem;font-style:normal;line-height:1;letter-spacing:2px}
 
 /* ═══ SESIONES ═══ */
 #sesiones{padding:120px 60px;background:var(--dark2)}
@@ -531,7 +531,16 @@ function lbNav(d){lbi=(lbi+d+LBI.length)%LBI.length;document.getElementById('lb-
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')lbNav(1);if(e.key==='ArrowLeft')lbNav(-1)});
 
 // VIDEOS
-function playVid(id,btn){const v=document.getElementById(id);if(v.paused){v.play();btn.style.display='none';v.addEventListener('pause',()=>btn.style.display='flex',{once:true})}else{v.pause()}}
+function playVid(id,btn){
+  const v=document.getElementById(id);
+  if(v.paused){
+    v.play();
+    btn.querySelector('.vid-icon').textContent='❚❚';
+  } else {
+    v.pause();
+    btn.querySelector('.vid-icon').textContent='▶';
+  }
+}
 </script>
 </body>
 </html>
