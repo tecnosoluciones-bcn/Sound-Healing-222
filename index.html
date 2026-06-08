@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sound Healing 222 — Anna Cano</title>
+<title>Sound Healing 222 — Anna Cano · Barcelona</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -16,155 +16,172 @@ html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--cream-dim);font-family:'Cormorant Garamond',serif;overflow-x:hidden}
 #stars{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;width:100%;z-index:999;padding:22px 60px;display:flex;justify-content:space-between;align-items:center;transition:all .5s}
-nav.scrolled{background:rgba(8,6,4,.96);backdrop-filter:blur(20px);padding:14px 60px;border-bottom:1px solid rgba(201,168,76,.1)}
-.nav-logo{font-family:'Cinzel',serif;color:var(--gold);font-size:1.05rem;letter-spacing:4px;display:flex;align-items:center;gap:9px;text-decoration:none;flex-shrink:0;white-space:nowrap}
-.nav-moon{display:inline-block;transform:scaleX(-1)}
-.nav-menu{display:flex;gap:28px;list-style:none;align-items:center;margin:0;padding:0}
-.nav-menu a{color:var(--cream);text-decoration:none;font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;transition:color .3s;white-space:nowrap;position:relative}
-.nav-menu a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
-.nav-menu a:hover{color:var(--gold)}
-.nav-menu a:hover::after{width:100%}
-.nav-btn{padding:9px 22px;border:1px solid var(--gold);color:var(--gold)!important;transition:all .3s!important}
-.nav-btn:hover{background:var(--gold);color:var(--dark)!important}
-.nav-btn::after{display:none!important}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-.hamburger span{width:22px;height:1px;background:var(--gold);display:block}
+/* ═══ NAV — único, limpio ═══ */
+#nav{position:fixed;top:0;left:0;right:0;z-index:9999;display:flex;justify-content:space-between;align-items:center;padding:22px 50px;transition:all .5s}
+#nav.scrolled{background:rgba(8,6,4,.96);backdrop-filter:blur(20px);padding:14px 50px;border-bottom:1px solid rgba(201,168,76,.1)}
+.nav-logo{font-family:'Cinzel',serif;color:var(--gold);font-size:1rem;letter-spacing:4px;display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0}
+.nav-logo-moon{display:inline-block;transform:scaleX(-1)}
+#nav ul{display:flex;gap:26px;list-style:none;align-items:center;margin:0;padding:0}
+#nav ul li a{color:var(--cream);text-decoration:none;font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;transition:color .3s;position:relative}
+#nav ul li a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+#nav ul li a:hover{color:var(--gold)}
+#nav ul li a:hover::after{width:100%}
+.nav-reservar{padding:9px 20px !important;border:1px solid var(--gold) !important;color:var(--gold) !important;transition:all .3s !important}
+.nav-reservar:hover{background:var(--gold) !important;color:var(--dark) !important}
+.nav-reservar::after{display:none !important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{width:22px;height:1px;background:var(--gold);display:block}
 
-/* HERO */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+/* ═══ HERO ═══ */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:120px 20px 60px}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 25%,#301a05 0%,#160c04 40%,#080604 80%)}
-.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,transparent 30%,#080604 80%)}
-.h-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
-.h-orb.a{width:700px;height:700px;top:-150px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(201,168,76,.08),transparent 65%)}
-.hero-inner{position:relative;z-index:2;padding:20px;max-width:760px}
+.hero-vign{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,transparent 30%,#080604 80%)}
+.hero-orb{position:absolute;width:700px;height:700px;top:-150px;left:50%;transform:translateX(-50%);border-radius:50%;filter:blur(90px);background:radial-gradient(circle,rgba(201,168,76,.08),transparent 65%);pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:800px;width:100%}
 .hero-moon{font-size:3.8rem;display:inline-block;transform:scaleX(-1);margin-bottom:28px;line-height:1;animation:floatMoon 6s ease-in-out infinite}
 @keyframes floatMoon{0%,100%{transform:scaleX(-1) translateY(0)}50%{transform:scaleX(-1) translateY(-12px)}}
-.hero-eyebrow{font-family:'Cinzel',serif;font-size:.88rem;letter-spacing:7px;color:var(--gold);text-transform:uppercase;margin-bottom:26px;display:block;opacity:.9}
+.hero-eyebrow{font-family:'Cinzel',serif;font-size:.88rem;letter-spacing:7px;color:var(--gold);text-transform:uppercase;margin-bottom:22px;display:block;opacity:.9}
 .hero-title{font-family:'Cinzel',serif;font-size:clamp(4rem,11vw,8.5rem);font-weight:400;color:var(--cream);line-height:.95;text-shadow:0 0 80px rgba(201,168,76,.12)}
-.hero-222{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,6.5vw,5rem);font-weight:300;color:var(--gold);font-style:italic;display:block;letter-spacing:14px;margin:14px 0 42px}
-.hero-tag{font-size:clamp(1rem,2.2vw,1.2rem);color:var(--cream-dim);letter-spacing:5px;margin-bottom:54px;font-weight:300;line-height:2.2}
-.hero-sep{color:var(--gold);margin:0 12px;opacity:.5}
-.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn-gold{display:inline-block;padding:15px 42px;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:.82rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;position:relative;overflow:hidden;transition:color .4s}
+.hero-222{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,6.5vw,5rem);font-weight:300;color:var(--gold);font-style:italic;display:block;letter-spacing:14px;margin:14px 0 36px}
+.hero-tag{font-size:clamp(.95rem,2vw,1.15rem);color:var(--cream-dim);letter-spacing:5px;margin-bottom:46px;font-weight:300;line-height:2.2}
+.hero-sep{color:var(--gold);margin:0 10px;opacity:.5}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:50px}
+.btn-gold{display:inline-block;padding:14px 40px;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;position:relative;overflow:hidden;transition:color .4s}
 .btn-gold::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
 .btn-gold:hover{color:var(--dark)}
 .btn-gold:hover::before{transform:translateY(0)}
 .btn-gold span{position:relative;z-index:1}
-.btn-ghost{display:inline-block;padding:15px 42px;border:1px solid rgba(245,237,216,.15);color:var(--cream-dim);font-family:'Cinzel',serif;font-size:.82rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .3s}
-.btn-ghost:hover{border-color:rgba(245,237,216,.35);color:var(--cream)}
-.scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;z-index:2}
-.scroll-lbl{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:5px;color:rgba(201,168,76,.45);text-transform:uppercase}
-.scroll-track{width:1px;height:50px;background:rgba(201,168,76,.1);position:relative;overflow:hidden}
+.btn-ghost{display:inline-block;padding:14px 40px;border:1px solid rgba(245,237,216,.18);color:var(--cream-dim);font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.btn-ghost:hover{border-color:rgba(245,237,216,.4);color:var(--cream)}
+.hero-flyer img{max-width:400px;width:100%;border:1px solid rgba(201,168,76,.2);box-shadow:0 0 60px rgba(201,168,76,.07);display:block;margin:0 auto}
+.scroll-hint{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
+.scroll-lbl{font-family:'Cinzel',serif;font-size:.58rem;letter-spacing:5px;color:rgba(201,168,76,.4);text-transform:uppercase}
+.scroll-track{width:1px;height:46px;background:rgba(201,168,76,.1);position:relative;overflow:hidden}
 .scroll-track::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:50%;background:linear-gradient(to bottom,transparent,var(--gold-dim));animation:st 2.2s ease-in-out infinite}
 @keyframes st{to{top:200%}}
 
-/* SECTION BASE */
+/* ═══ PRÓXIMAS SESIONES ═══ */
+#proximas{position:relative;z-index:1;padding:100px 60px;background:linear-gradient(180deg,var(--dark),var(--dark2))}
+.proximas-inner{max-width:900px;margin:0 auto;text-align:center}
+.prox-badge{display:inline-block;font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:5px;color:var(--gold);text-transform:uppercase;border:1px solid rgba(201,168,76,.25);padding:8px 22px;margin-bottom:30px;background:rgba(201,168,76,.04)}
+.prox-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:300;color:var(--cream);font-style:italic;margin-bottom:16px}
+.prox-sub{font-size:1.1rem;color:var(--cream-dim);margin-bottom:50px;font-weight:300;line-height:1.8}
+.prox-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:rgba(201,168,76,.07);margin-bottom:44px}
+.prox-card{background:var(--dark3);padding:40px 32px;text-align:left;transition:background .3s}
+.prox-card:hover{background:var(--dark4)}
+.prox-date{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;opacity:.85}
+.prox-name{font-size:1.5rem;font-weight:300;color:var(--cream);font-style:italic;margin-bottom:8px}
+.prox-info{font-size:.9rem;color:var(--cream-dim);line-height:1.8;margin-bottom:20px}
+.prox-price{font-family:'Cinzel',serif;font-size:1.6rem;color:var(--gold)}
+.prox-price small{font-size:.75rem;color:var(--gold-dim);font-family:'Cormorant Garamond',serif;font-style:italic;display:block}
+.prox-cta{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:10px 22px;border:1px solid rgba(201,168,76,.28);color:var(--gold);font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:3px;text-decoration:none;text-transform:uppercase;background:rgba(201,168,76,.03);transition:all .3s}
+.prox-cta:hover{background:rgba(201,168,76,.1);border-color:var(--gold);gap:14px}
+
+/* ═══ SECTION BASE ═══ */
 section{position:relative;z-index:1}
 .s-label{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:7px;color:var(--gold);text-transform:uppercase;text-align:center;margin-bottom:14px;opacity:.85}
 .s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,4.4rem);font-weight:300;text-align:center;color:var(--cream);font-style:italic;margin-bottom:16px}
-.s-orn{display:flex;align-items:center;gap:14px;max-width:220px;margin:0 auto 72px}
+.s-orn{display:flex;align-items:center;gap:14px;max-width:220px;margin:0 auto 70px}
 .s-orn-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim))}
 .s-orn-line.r{background:linear-gradient(to left,transparent,var(--gold-dim))}
 .s-orn-star{color:var(--gold);font-size:.7rem;opacity:.7}
 
-/* ABOUT */
-#sobre{padding:130px 60px;background:linear-gradient(180deg,var(--dark),var(--dark2) 60%,var(--dark3))}
-.about-grid{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:400px 1fr;gap:90px;align-items:center}
+/* ═══ ABOUT ═══ */
+#sobre{padding:120px 60px;background:var(--dark2)}
+.about-grid{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:400px 1fr;gap:80px;align-items:center}
 .about-frame{position:relative}
 .about-frame::before{content:'';position:absolute;top:-10px;left:-10px;right:10px;bottom:10px;border:1px solid rgba(201,168,76,.13);pointer-events:none;z-index:2}
 .about-img{width:100%;aspect-ratio:3/4;overflow:hidden;position:relative}
-.about-img img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.9) saturate(.85)}
+.about-img img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.92) saturate(.88)}
 .about-badge{position:absolute;bottom:-16px;left:28px;background:var(--dark2);border:1px solid rgba(201,168,76,.22);padding:10px 20px;font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:3px;color:var(--gold);z-index:3}
 .about-name{font-family:'Cinzel',serif;font-size:2.2rem;color:var(--cream);margin-bottom:4px}
-.about-role{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:34px;opacity:.85}
-.about-text p{font-size:1.15rem;line-height:2.1;color:var(--cream-dim);margin-bottom:20px;font-weight:300}
+.about-role{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;display:block;margin-bottom:32px;opacity:.85}
+.about-text p{font-size:1.12rem;line-height:2.05;color:var(--cream-dim);margin-bottom:18px;font-weight:300}
 .about-text p strong{color:var(--cream);font-weight:400}
-.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
-.tag{padding:7px 18px;border:1px solid rgba(201,168,76,.18);font-size:.7rem;letter-spacing:2px;color:var(--gold-dim);text-transform:uppercase;background:rgba(201,168,76,.03);transition:all .3s}
-.tag:hover{border-color:var(--gold-dim);color:var(--gold)}
+.about-link{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:3px;color:var(--gold);text-decoration:none;text-transform:uppercase;border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:3px;transition:all .3s}
+.about-link:hover{border-color:var(--gold);gap:14px}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.tag{padding:6px 16px;border:1px solid rgba(201,168,76,.18);font-size:.68rem;letter-spacing:2px;color:var(--gold-dim);text-transform:uppercase;background:rgba(201,168,76,.03);transition:all .3s}
+.tag:hover{color:var(--gold)}
 
-/* GALLERY — fotos de trabajo (Anna) */
+/* ═══ GALERÍA ANNA ═══ */
 #galeria-anna{padding:100px 60px;background:var(--dark2)}
-.gallery-anna{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.gal-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .gal-item{position:relative;overflow:hidden;cursor:pointer}
-.gal-item img{width:100%;height:360px;object-fit:cover;object-position:center;filter:brightness(.85) saturate(.8);transition:all .6s}
+.gal-item img{width:100%;height:360px;object-fit:cover;filter:brightness(.85) saturate(.8);transition:all .6s}
 .gal-item:hover img{filter:brightness(.95) saturate(1);transform:scale(1.04)}
-.gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,6,4,.7) 0%,transparent 50%);opacity:0;transition:opacity .4s}
-.gal-item:hover .gal-overlay{opacity:1}
+.gal-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,6,4,.6),transparent 50%);opacity:0;transition:opacity .4s}
+.gal-item:hover .gal-ov{opacity:1}
 
-/* GALLERY — instrumentos */
+/* ═══ GALERÍA INSTRUMENTOS ═══ */
 #galeria-inst{padding:0 60px 100px;background:var(--dark2)}
-.gallery-inst{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.inst-item{position:relative;overflow:hidden}
-.inst-item img{width:100%;height:300px;object-fit:cover;object-position:center;filter:brightness(.8) saturate(.75);transition:all .6s}
+.inst-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.inst-item{overflow:hidden;cursor:pointer}
+.inst-item img{width:100%;height:300px;object-fit:cover;filter:brightness(.8) saturate(.75);transition:all .6s}
 .inst-item:hover img{filter:brightness(.95) saturate(1);transform:scale(1.04)}
 
 /* LIGHTBOX */
 .lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:2000;align-items:center;justify-content:center;padding:20px}
 .lb.open{display:flex}
-.lb img{max-width:90vw;max-height:90vh;object-fit:contain;box-shadow:0 0 60px rgba(201,168,76,.1)}
-.lb-close{position:absolute;top:24px;right:32px;color:var(--gold);font-size:2rem;cursor:pointer;font-family:'Cinzel',serif;line-height:1;background:none;border:none;transition:opacity .3s}
-.lb-close:hover{opacity:.6}
-.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%);color:var(--gold);font-size:2.5rem;cursor:pointer;background:none;border:none;padding:10px;transition:opacity .3s;font-family:'Cinzel',serif}
-.lb-prev{left:24px}.lb-next{right:24px}
-.lb-prev:hover,.lb-next:hover{opacity:.6}
+.lb img{max-width:90vw;max-height:90vh;object-fit:contain}
+.lb-x{position:absolute;top:24px;right:32px;color:var(--gold);font-size:2rem;cursor:pointer;background:none;border:none;font-family:'Cinzel',serif}
+.lb-p,.lb-n{position:absolute;top:50%;transform:translateY(-50%);color:var(--gold);font-size:2.5rem;cursor:pointer;background:none;border:none;font-family:'Cinzel',serif;padding:10px}
+.lb-p{left:24px}.lb-n{right:24px}
 
-/* VIDEOS */
+/* ═══ VIDEOS ═══ */
 #videos{padding:100px 60px;background:var(--dark3)}
-.video-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.video-wrap{position:relative;overflow:hidden;background:var(--dark2)}
-.video-wrap video{width:100%;height:100%;max-height:460px;object-fit:cover;display:block;cursor:pointer}
-.video-play-btn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(8,6,4,.4);transition:background .3s;cursor:pointer}
-.video-play-btn:hover{background:rgba(8,6,4,.2)}
-.play-circle{width:64px;height:64px;border:1px solid rgba(201,168,76,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s}
-.video-play-btn:hover .play-circle{background:rgba(201,168,76,.15);border-color:var(--gold)}
-.play-icon{color:var(--gold);font-size:1.6rem;margin-left:4px}
+.vid-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.vid-wrap{position:relative;overflow:hidden;background:var(--dark2)}
+.vid-wrap video{width:100%;max-height:460px;object-fit:cover;display:block}
+.vid-btn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(8,6,4,.4);cursor:pointer;transition:background .3s}
+.vid-btn:hover{background:rgba(8,6,4,.2)}
+.vid-circle{width:64px;height:64px;border:1px solid rgba(201,168,76,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.vid-btn:hover .vid-circle{background:rgba(201,168,76,.15);border-color:var(--gold)}
+.vid-icon{color:var(--gold);font-size:1.6rem;margin-left:5px}
 
-/* SERVICES */
-#sesiones{padding:130px 60px;background:var(--dark2)}
+/* ═══ SESIONES ═══ */
+#sesiones{padding:120px 60px;background:var(--dark2)}
 .svc-grid{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,.07)}
-.scard{background:var(--dark3);padding:52px 38px;position:relative;overflow:hidden;transition:all .4s;display:flex;flex-direction:column}
+.scard{background:var(--dark3);padding:50px 36px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:all .4s}
 .scard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform .5s}
 .scard:hover{background:var(--dark4);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
 .scard:hover::after{transform:scaleX(1)}
-.scard-num{position:absolute;top:20px;right:24px;font-family:'Cinzel',serif;font-size:3rem;color:rgba(201,168,76,.05);font-weight:600;line-height:1}
-.scard-icon{font-size:2rem;margin-bottom:26px}
+.scard-num{position:absolute;top:20px;right:22px;font-family:'Cinzel',serif;font-size:3rem;color:rgba(201,168,76,.05);font-weight:600;line-height:1}
+.scard-icon{font-size:2rem;margin-bottom:24px}
 .scard-type{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;opacity:.85}
 .scard-title{font-size:1.85rem;font-weight:300;color:var(--cream);margin-bottom:6px;font-style:italic;line-height:1.2}
 .scard-sub{font-size:.95rem;color:var(--cream-dim);margin-bottom:22px;opacity:.65}
-.scard-divider{width:28px;height:1px;background:var(--gold-dim);margin-bottom:22px;opacity:.4}
+.scard-div{width:28px;height:1px;background:var(--gold-dim);margin-bottom:22px;opacity:.4}
 .scard-price{font-family:'Cinzel',serif;font-size:2.1rem;color:var(--gold);margin-bottom:22px;line-height:1}
 .scard-price small{font-size:.85rem;color:var(--gold-dim);font-family:'Cormorant Garamond',serif;font-style:italic;display:block;margin-top:6px}
-.scard-list{list-style:none;flex:1;padding-bottom:28px}
-.scard-list li{font-size:1.02rem;color:var(--cream-dim);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:flex-start;gap:10px;line-height:1.6}
+.scard-list{list-style:none;flex:1;padding-bottom:26px}
+.scard-list li{font-size:1rem;color:var(--cream-dim);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:10px;line-height:1.6}
 .scard-list li::before{content:'·';color:var(--gold);flex-shrink:0;font-size:1.4rem;line-height:1;margin-top:-2px}
-.scard-cta{display:inline-flex;align-items:center;gap:10px;margin-top:28px;padding:12px 26px;border:1px solid rgba(201,168,76,.3);background:rgba(201,168,76,.04);color:var(--gold);font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:3px;text-decoration:none;text-transform:uppercase;transition:all .35s}
+.scard-cta{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:12px 24px;border:1px solid rgba(201,168,76,.28);background:rgba(201,168,76,.04);color:var(--gold);font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:3px;text-decoration:none;text-transform:uppercase;transition:all .35s}
 .scard-cta:hover{background:rgba(201,168,76,.12);border-color:var(--gold);gap:16px}
 .scard-featured{background:linear-gradient(150deg,#2c1e07,#160e04);border:1px solid rgba(201,168,76,.22)}
 
-/* BENEFICIOS */
-#beneficios{padding:110px 60px;background:linear-gradient(180deg,var(--dark2),var(--dark3))}
-.ben-grid{max-width:1020px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:48px 60px}
+/* ═══ BENEFICIOS ═══ */
+#beneficios{padding:100px 60px;background:linear-gradient(180deg,var(--dark2),var(--dark3))}
+.ben-grid{max-width:1020px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:44px 56px}
 .ben{text-align:center}
 .ben-icon{font-size:2.4rem;margin-bottom:18px;display:block}
 .ben-title{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
 .ben-text{font-size:1rem;color:var(--cream-dim);line-height:1.85;font-weight:300}
 
-/* TESTIMONIOS */
-#testimonios{padding:130px 60px;background:var(--dark3)}
+/* ═══ TESTIMONIOS ═══ */
+#testimonios{padding:120px 60px;background:var(--dark3)}
 .testi-grid{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.tcard{background:rgba(255,255,255,.018);border:1px solid rgba(201,168,76,.1);padding:46px 38px;position:relative;transition:border-color .4s}
+.tcard{background:rgba(255,255,255,.018);border:1px solid rgba(201,168,76,.1);padding:44px 36px;position:relative;transition:border-color .4s}
 .tcard:hover{border-color:rgba(201,168,76,.28)}
-.tcard-q{position:absolute;top:24px;left:30px;font-size:4.5rem;color:rgba(201,168,76,.08);font-family:Georgia,serif;line-height:.8;pointer-events:none}
-.tcard-text{font-size:1.1rem;line-height:2;color:var(--cream-dim);font-style:italic;font-weight:300;margin-bottom:28px;padding-top:22px}
+.tcard-q{position:absolute;top:22px;left:28px;font-size:4.5rem;color:rgba(201,168,76,.08);font-family:Georgia,serif;line-height:.8;pointer-events:none}
+.tcard-text{font-size:1.1rem;line-height:2;color:var(--cream-dim);font-style:italic;font-weight:300;margin-bottom:26px;padding-top:22px}
 .tcard-foot{display:flex;justify-content:space-between;align-items:center}
-.tcard-stars{color:var(--gold);font-size:.68rem;letter-spacing:5px}
-.tcard-name{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase}
+.tcard-stars{color:var(--gold);font-size:.65rem;letter-spacing:5px}
+.tcard-name{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase}
 
-/* FAQ */
-#faq{padding:130px 60px;background:linear-gradient(180deg,var(--dark3),var(--dark2))}
+/* ═══ FAQ ═══ */
+#faq{padding:120px 60px;background:linear-gradient(180deg,var(--dark3),var(--dark2))}
 .faq-inner{max-width:800px;margin:0 auto}
 .faq-item{border-bottom:1px solid rgba(201,168,76,.1)}
 .faq-q{width:100%;background:none;border:none;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;padding:26px 0;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;transition:color .3s}
@@ -174,61 +191,62 @@ section{position:relative;z-index:1}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1)}
 .faq-a-inner{padding:0 0 26px;font-size:1.08rem;line-height:2.1;color:var(--cream-dim);font-weight:300}
 
-/* RESERVAR */
-#reservar{padding:140px 60px;background:var(--dark2);text-align:center;position:relative;overflow:hidden}
+/* ═══ RESERVAR ═══ */
+#reservar{padding:130px 60px;background:var(--dark2);text-align:center;position:relative;overflow:hidden}
 .reservar-orb{position:absolute;width:800px;height:800px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(201,168,76,.045),transparent 55%);pointer-events:none}
 #reservar .s-title{font-size:clamp(2.8rem,6.5vw,4.6rem)}
-#reservar p{font-size:1.18rem;color:var(--cream-dim);max-width:520px;margin:0 auto 56px;line-height:2.15;font-weight:300}
+#reservar > p{font-size:1.18rem;color:var(--cream-dim);max-width:520px;margin:0 auto 52px;line-height:2.1;font-weight:300}
 .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.btn-wa{display:inline-flex;align-items:center;gap:12px;padding:16px 42px;border:1px solid rgba(37,209,102,.35);color:#5ee880;font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;background:rgba(37,209,102,.06);transition:all .35s}
+.btn-wa{display:inline-flex;align-items:center;gap:12px;padding:15px 40px;border:1px solid rgba(37,209,102,.35);color:#5ee880;font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;background:rgba(37,209,102,.06);transition:all .35s}
 .btn-wa:hover{background:rgba(37,209,102,.14);border-color:rgba(37,209,102,.65)}
-.btn-ig{display:inline-flex;align-items:center;gap:12px;padding:16px 42px;border:1px solid rgba(201,168,76,.3);color:var(--gold);font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;background:rgba(201,168,76,.05);transition:all .35s}
+.btn-ig{display:inline-flex;align-items:center;gap:12px;padding:15px 40px;border:1px solid rgba(201,168,76,.3);color:var(--gold);font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;background:rgba(201,168,76,.05);transition:all .35s}
 .btn-ig:hover{background:rgba(201,168,76,.12);border-color:var(--gold)}
 
-/* FLOAT */
+/* ═══ FLOAT ═══ */
 .wa-float{position:fixed;bottom:32px;right:32px;z-index:500;width:52px;height:52px;background:#128c7e;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 28px rgba(18,140,126,.45);text-decoration:none;transition:all .3s}
 .wa-float:hover{transform:scale(1.1)}
 .wa-float svg{width:24px;height:24px;fill:white}
 
-/* FOOTER */
-footer{background:var(--dark);padding:64px 60px 36px;border-top:1px solid rgba(201,168,76,.07);text-align:center}
-.footer-moon{display:inline-block;transform:scaleX(-1);font-size:1.6rem;margin-bottom:16px;color:var(--gold);opacity:.7}
-.footer-logo{font-family:'Cinzel',serif;font-size:1.15rem;color:var(--gold);letter-spacing:5px;margin-bottom:8px}
-.footer-tag{font-size:.8rem;color:var(--cream-dim);letter-spacing:3px;opacity:.5;margin-bottom:36px}
-.footer-nav{display:flex;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
-.footer-nav a{color:var(--cream-dim);text-decoration:none;font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;opacity:.55;transition:all .3s}
+/* ═══ FOOTER ═══ */
+footer{background:var(--dark);padding:60px 60px 34px;border-top:1px solid rgba(201,168,76,.07);text-align:center}
+.footer-moon{display:inline-block;transform:scaleX(-1);font-size:1.5rem;margin-bottom:14px;color:var(--gold);opacity:.7}
+.footer-logo{font-family:'Cinzel',serif;font-size:1.1rem;color:var(--gold);letter-spacing:5px;margin-bottom:8px}
+.footer-tag{font-size:.78rem;color:var(--cream-dim);letter-spacing:3px;opacity:.45;margin-bottom:32px}
+.footer-nav{display:flex;justify-content:center;flex-wrap:wrap;margin-bottom:30px}
+.footer-nav a{color:var(--cream-dim);text-decoration:none;font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;opacity:.5;transition:all .3s}
 .footer-nav a:hover{color:var(--gold);opacity:1}
-.footer-sep{color:rgba(201,168,76,.2);font-size:.7rem;padding:6px 0}
-.footer-divider{width:200px;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.15),transparent);margin:0 auto 28px}
-.footer-copy{font-size:.72rem;color:var(--gold-dim);letter-spacing:2px;opacity:.45;margin-bottom:10px}
-.footer-credit{font-size:.68rem;color:rgba(201,168,76,.3);letter-spacing:1.5px}
-.footer-credit a{color:rgba(201,168,76,.5);text-decoration:none;transition:color .3s}
+.footer-sep{color:rgba(201,168,76,.2);font-size:.7rem;padding:5px 0}
+.footer-div{width:180px;height:1px;background:linear-gradient(to right,transparent,rgba(201,168,76,.15),transparent);margin:0 auto 24px}
+.footer-copy{font-size:.7rem;color:var(--gold-dim);letter-spacing:2px;opacity:.4;margin-bottom:8px}
+.footer-credit{font-size:.66rem;color:rgba(201,168,76,.28);letter-spacing:1.5px}
+.footer-credit a{color:rgba(201,168,76,.45);text-decoration:none;transition:color .3s}
 .footer-credit a:hover{color:var(--gold)}
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .95s ease,transform .95s ease}
+/* ═══ REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
 .reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
 .reveal.visible{opacity:1;transform:none}
 
-/* RESPONSIVE */
+/* ═══ RESPONSIVE ═══ */
 @media(max-width:1100px){
   .svc-grid{grid-template-columns:repeat(2,1fr)}
-  .about-grid{grid-template-columns:1fr 1.5fr;gap:60px}
-  .gallery-anna,.gallery-inst,.video-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr 1.4fr;gap:60px}
+  .gal-grid,.inst-grid,.vid-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .testi-grid,.ben-grid{grid-template-columns:1fr 1fr}
+  .about-grid{grid-template-columns:1fr;max-width:480px}
 }
 @media(max-width:768px){
-  nav{padding:16px 20px}
-  nav.scrolled{padding:12px 20px}
-  .nav-menu{display:none;position:fixed;inset:0;background:rgba(8,6,4,.97);flex-direction:column;justify-content:center;align-items:center;gap:32px;padding:60px 40px}
-  .nav-menu.open{display:flex}
-  .nav-menu a{font-size:1rem;letter-spacing:4px}
-  .hamburger{display:flex}
-  section{padding:80px 20px!important}
-  #reservar{padding:90px 20px!important}
-  footer{padding:50px 20px 28px!important}
-  .svc-grid,.testi-grid,.ben-grid,.gallery-anna,.gallery-inst,.video-grid{grid-template-columns:1fr}
-  .about-grid{grid-template-columns:1fr;max-width:500px}
-  .gal-item img,.inst-item img{height:260px}
+  #nav{padding:16px 20px}
+  #nav.scrolled{padding:12px 20px}
+  #nav ul{display:none;position:fixed;inset:0;background:rgba(8,6,4,.97);flex-direction:column;justify-content:center;align-items:center;gap:30px}
+  #nav ul.open{display:flex}
+  #nav ul li a{font-size:.95rem;letter-spacing:4px}
+  .nav-hamburger{display:flex}
+  section,#proximas{padding-left:20px!important;padding-right:20px!important}
+  .svc-grid,.testi-grid,.ben-grid,.gal-grid,.inst-grid,.vid-grid,.prox-cards{grid-template-columns:1fr}
+  .gal-item img,.inst-item img{height:240px}
 }
 </style>
 </head>
@@ -236,27 +254,29 @@ footer{background:var(--dark);padding:64px 60px 36px;border-top:1px solid rgba(2
 
 <canvas id="stars"></canvas>
 
-<!-- NAV -->
+<!-- ══ NAV (único) ══ -->
 <nav id="nav">
-  <a href="#hero" class="nav-logo"><span class="nav-moon">☽</span> Sound Healing 222</a>
-  <ul class="nav-menu" id="navMenu">
+  <a href="#hero" class="nav-logo">
+    <span class="nav-logo-moon">☽</span> Sound Healing 222
+  </a>
+  <ul id="navMenu">
     <li><a href="sobre-mi.html">Sobre mí</a></li>
+    <li><a href="#galeria-anna">Galería</a></li>
     <li><a href="#sesiones">Sesiones</a></li>
     <li><a href="#testimonios">Experiencias</a></li>
-    <li><a href="#faq">FAQ</a></li>
     <li><a href="https://www.instagram.com/soundhealingwithanna/" target="_blank">Instagram</a></li>
-    <li><a href="#reservar" class="nav-btn">Reservar</a></li>
+    <li><a href="#reservar" class="nav-reservar">Reservar</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menú">
+  <button class="nav-hamburger" id="hamburger" aria-label="Menú">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- HERO -->
+<!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-bg"></div>
-  <div class="hero-vignette"></div>
-  <div class="h-orb a"></div>
+  <div class="hero-vign"></div>
+  <div class="hero-orb"></div>
   <div class="hero-inner reveal">
     <span class="hero-moon">☽</span>
     <span class="hero-eyebrow">Terapia de Sonido · Barcelona</span>
@@ -267,10 +287,8 @@ footer{background:var(--dark);padding:64px 60px 36px;border-top:1px solid rgba(2
       <a href="#reservar" class="btn-gold"><span>Reservar sesión</span></a>
       <a href="sobre-mi.html" class="btn-ghost">Sobre mí</a>
     </div>
-    <!-- FLYER -->
-    <div class="hero-flyer reveal" style="margin-top:56px">
-      <img src="flyer.png" alt="Sound Healing 222 — Próximas sesiones"
-           style="max-width:420px;width:100%;border:1px solid rgba(201,168,76,.2);box-shadow:0 0 60px rgba(201,168,76,.08);display:block;margin:0 auto">
+    <div class="hero-flyer reveal d1">
+      <img src="flayer.png" alt="Sound Healing 222 — Próximas sesiones">
     </div>
   </div>
   <div class="scroll-hint">
@@ -279,249 +297,162 @@ footer{background:var(--dark);padding:64px 60px 36px;border-top:1px solid rgba(2
   </div>
 </section>
 
-<!-- SOBRE -->
+<!-- ══ PRÓXIMAS SESIONES ══ -->
+<section id="proximas">
+  <div class="proximas-inner">
+    <span class="prox-badge reveal">✦ Próximas fechas ✦</span>
+    <h2 class="prox-title reveal">Sesiones disponibles</h2>
+    <p class="prox-sub reveal">Plazas muy limitadas · Escríbeme para confirmar tu sitio</p>
+    <div class="prox-cards">
+      <div class="prox-card reveal">
+        <p class="prox-date">Próximamente · Barcelona</p>
+        <h3 class="prox-name">Baño de Sonido Grupal</h3>
+        <p class="prox-info">Meditación guiada · Respiración consciente<br>Viaje sonoro con cuencos · Grupos reducidos</p>
+        <div class="prox-price">22€ <small>por persona · 33€ en pareja</small></div>
+        <a href="https://wa.me/34682840053?text=Hola%20Anna!%20Quiero%20reservar%20el%20baño%20de%20sonido%20grupal%20🌙" target="_blank" class="prox-cta">Reservar plaza →</a>
+      </div>
+      <div class="prox-card reveal d1">
+        <p class="prox-date">Bajo demanda · Barcelona</p>
+        <h3 class="prox-name">Sesión Individual</h3>
+        <p class="prox-info">Atención 100% personalizada<br>Cuencos tibetanos · Terapia emocional · 60–90 min</p>
+        <div class="prox-price">50€ <small>sesión individual</small></div>
+        <a href="https://wa.me/34682840053?text=Hola%20Anna!%20Quiero%20info%20sobre%20la%20sesión%20individual%20🌙" target="_blank" class="prox-cta">Consultar →</a>
+      </div>
+      <div class="prox-card reveal d2">
+        <p class="prox-date">Proceso · Bono</p>
+        <h3 class="prox-name">Acompañamiento profundo</h3>
+        <p class="prox-info">4 sesiones · Seguimiento personalizado<br>Sound healing + terapia convencional</p>
+        <div class="prox-price">150€ <small>bono 4 sesiones</small></div>
+        <a href="https://wa.me/34682840053?text=Hola%20Anna!%20Quiero%20info%20sobre%20el%20proceso%20terapéutico%20🌙" target="_blank" class="prox-cta">Más info →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SOBRE ══ -->
 <section id="sobre">
   <p class="s-label reveal">Sound Healer</p>
   <h2 class="s-title reveal">Anna Cano</h2>
   <div class="s-orn reveal"><div class="s-orn-line"></div><span class="s-orn-star">✦</span><div class="s-orn-line r"></div></div>
   <div class="about-grid">
     <div class="about-frame reveal">
-      <div class="about-img">
-        <img src="2.png" alt="Anna Cano — Sound Healer" loading="lazy">
-      </div>
+      <div class="about-img"><img src="2.png" alt="Anna Cano — Sound Healer Barcelona"></div>
       <div class="about-badge">Sound Healer · 222</div>
     </div>
     <div class="about-text">
       <h3 class="about-name reveal">Mi camino con el sonido</h3>
       <span class="about-role reveal">Un viaje hacia dentro, a través de la vibración</span>
       <p class="reveal">Mi camino nace de una búsqueda personal: encontrar <strong>espacios de calma, presencia y conexión interior</strong> en medio del ritmo acelerado de la vida.</p>
-      <p class="reveal d1">Comencé en la música clásica desde muy joven. Me formé como <strong>Educadora Social</strong>, entendiendo la importancia de crear espacios donde las personas puedan sentirse seguras y libres de ser.</p>
-      <p class="reveal d2">Durante un viaje por Asia descubrí el Sound Healing — el sonido como herramienta para <strong>volver al cuerpo, al presente y a uno mismo</strong>. Formación en India y Tailandia. Actualmente en Terapia Gestalt.</p>
+      <p class="reveal d1">Comencé en la música clásica desde muy joven. Me formé como <strong>Educadora Social</strong> y descubrí el Sound Healing durante un viaje por Asia — formación en India y Tailandia. Actualmente en Terapia Gestalt.</p>
+      <a href="sobre-mi.html" class="about-link reveal d2">Leer mi historia completa →</a>
       <div class="about-tags reveal d3">
         <span class="tag">India</span><span class="tag">Tailandia</span><span class="tag">Sri Lanka</span>
-        <span class="tag">Barcelona</span><span class="tag">Gestalt</span><span class="tag">Educ. Social</span>
+        <span class="tag">Barcelona</span><span class="tag">Gestalt</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALERÍA ANNA -->
+<!-- ══ GALERÍA ANNA ══ -->
 <section id="galeria-anna">
   <p class="s-label reveal">En acción</p>
   <h2 class="s-title reveal">El trabajo de Anna</h2>
   <div class="s-orn reveal"><div class="s-orn-line"></div><span class="s-orn-star">✦</span><div class="s-orn-line r"></div></div>
-  <div class="gallery-anna">
-    <div class="gal-item reveal" onclick="openLb(0)">
-      <img src="1.png" alt="Anna Cano — Sound Healing sesión" loading="lazy">
-      <div class="gal-overlay"></div>
-    </div>
-    <div class="gal-item reveal d1" onclick="openLb(1)">
-      <img src="2.png" alt="Anna Cano — Sound Healing" loading="lazy">
-      <div class="gal-overlay"></div>
-    </div>
-    <div class="gal-item reveal d2" onclick="openLb(2)">
-      <img src="3.png" alt="Anna Cano — Sound Healing playa" loading="lazy">
-      <div class="gal-overlay"></div>
-    </div>
+  <div class="gal-grid">
+    <div class="gal-item reveal" onclick="openLb(0)"><img src="1.png" alt="Anna Cano Sound Healing"><div class="gal-ov"></div></div>
+    <div class="gal-item reveal d1" onclick="openLb(1)"><img src="2.png" alt="Anna Cano Sound Healing"><div class="gal-ov"></div></div>
+    <div class="gal-item reveal d2" onclick="openLb(2)"><img src="3.png" alt="Anna Cano Sound Healing playa"><div class="gal-ov"></div></div>
   </div>
 </section>
 
-<!-- GALERÍA INSTRUMENTOS -->
-<section id="galeria-inst">
-  <p class="s-label reveal" style="margin-top:80px">Los instrumentos</p>
+<!-- ══ GALERÍA INSTRUMENTOS ══ -->
+<section id="galeria-inst" style="padding-top:0">
+  <p class="s-label reveal" style="margin-top:70px">Los instrumentos</p>
   <h2 class="s-title reveal">Cuencos & Herramientas</h2>
   <div class="s-orn reveal"><div class="s-orn-line"></div><span class="s-orn-star">✦</span><div class="s-orn-line r"></div></div>
-  <div class="gallery-inst">
-    <div class="inst-item reveal" onclick="openLb(3)">
-      <img src="4.png" alt="Instrumentos Sound Healing — sesión" loading="lazy">
-    </div>
-    <div class="inst-item reveal d1" onclick="openLb(4)">
-      <img src="5.png" alt="Cuencos tibetanos mandala" loading="lazy">
-    </div>
-    <div class="inst-item reveal d2" onclick="openLb(5)">
-      <img src="6.png" alt="Cuencos Sound Healing playa" loading="lazy">
-    </div>
+  <div class="inst-grid">
+    <div class="inst-item reveal" onclick="openLb(3)"><img src="4.png" alt="Instrumentos Sound Healing"></div>
+    <div class="inst-item reveal d1" onclick="openLb(4)"><img src="5.png" alt="Cuencos tibetanos mandala"></div>
+    <div class="inst-item reveal d2" onclick="openLb(5)"><img src="6.png" alt="Cuencos Sound Healing playa"></div>
   </div>
 </section>
 
 <!-- LIGHTBOX -->
-<div class="lb" id="lb" onclick="closeLbOutside(event)">
-  <button class="lb-close" onclick="closeLb()">✕</button>
-  <button class="lb-prev" onclick="lbNav(-1)">‹</button>
+<div class="lb" id="lb" onclick="if(event.target===this)closeLb()">
+  <button class="lb-x" onclick="closeLb()">✕</button>
+  <button class="lb-p" onclick="lbNav(-1)">‹</button>
   <img id="lb-img" src="" alt="">
-  <button class="lb-next" onclick="lbNav(1)">›</button>
+  <button class="lb-n" onclick="lbNav(1)">›</button>
 </div>
 
-<!-- VIDEOS -->
+<!-- ══ VÍDEOS ══ -->
 <section id="videos">
   <p class="s-label reveal">Momentos reales</p>
   <h2 class="s-title reveal">Vídeos de sesiones</h2>
   <div class="s-orn reveal"><div class="s-orn-line"></div><span class="s-orn-star">✦</span><div class="s-orn-line r"></div></div>
-  <div class="video-grid">
-    <div class="video-wrap reveal">
-      <video src="video1.mp4" loop playsinline preload="metadata" id="v1"></video>
-      <div class="video-play-btn" onclick="toggleVideo('v1',this)">
-        <div class="play-circle"><span class="play-icon">▶</span></div>
-      </div>
-    </div>
-    <div class="video-wrap reveal d1">
-      <video src="video2.mp4" loop playsinline preload="metadata" id="v2"></video>
-      <div class="video-play-btn" onclick="toggleVideo('v2',this)">
-        <div class="play-circle"><span class="play-icon">▶</span></div>
-      </div>
-    </div>
-    <div class="video-wrap reveal d2">
-      <video src="video3.mp4" loop playsinline preload="metadata" id="v3"></video>
-      <div class="video-play-btn" onclick="toggleVideo('v3',this)">
-        <div class="play-circle"><span class="play-icon">▶</span></div>
-      </div>
-    </div>
-    <div class="video-wrap reveal d3">
-      <video src="video4.mp4" loop playsinline preload="metadata" id="v4"></video>
-      <div class="video-play-btn" onclick="toggleVideo('v4',this)">
-        <div class="play-circle"><span class="play-icon">▶</span></div>
-      </div>
-    </div>
+  <div class="vid-grid">
+    <div class="vid-wrap reveal"><video src="video1.mp4" loop playsinline preload="metadata" id="v1"></video><div class="vid-btn" onclick="playVid('v1',this)"><div class="vid-circle"><span class="vid-icon">▶</span></div></div></div>
+    <div class="vid-wrap reveal d1"><video src="video2.mp4" loop playsinline preload="metadata" id="v2"></video><div class="vid-btn" onclick="playVid('v2',this)"><div class="vid-circle"><span class="vid-icon">▶</span></div></div></div>
+    <div class="vid-wrap reveal d2"><video src="video3.mp4" loop playsinline preload="metadata" id="v3"></video><div class="vid-btn" onclick="playVid('v3',this)"><div class="vid-circle"><span class="vid-icon">▶</span></div></div></div>
+    <div class="vid-wrap reveal d3"><video src="video4.mp4" loop playsinline preload="metadata" id="v4"></video><div class="vid-btn" onclick="playVid('v4',this)"><div class="vid-circle"><span class="vid-icon">▶</span></div></div></div>
   </div>
 </section>
 
-<!-- SESIONES -->
+<!-- ══ SESIONES ══ -->
 <section id="sesiones">
   <p class="s-label reveal">Lo que ofrezco</p>
   <h2 class="s-title reveal">Sesiones & Procesos</h2>
   <div class="s-orn reveal"><div class="s-orn-line"></div><span class="s-orn-star">✦</span><div class="s-orn-line r"></div></div>
   <div class="svc-grid">
-    <div class="scard reveal">
-      <div class="scard-num">01</div>
-      <span class="scard-icon">🌙</span>
-      <p class="scard-type">Experiencia grupal</p>
-      <h3 class="scard-title">Baño de Sonido</h3>
-      <p class="scard-sub">Sesión grupal · grupos reducidos</p>
-      <div class="scard-divider"></div>
-      <div class="scard-price">22€ <small>por persona · 33€ en pareja</small></div>
-      <ul class="scard-list">
-        <li>Meditación guiada</li><li>Respiración consciente</li>
-        <li>Viaje sonoro con cuencos</li><li>Espacio seguro, grupos reducidos</li>
-        <li>Acompañamiento antes y después</li>
-      </ul>
-      <a href="#reservar" class="scard-cta">Reservar →</a>
-    </div>
-    <div class="scard reveal d1">
-      <div class="scard-num">02</div>
-      <span class="scard-icon">✦</span>
-      <p class="scard-type">Bono experiencia</p>
-      <h3 class="scard-title">Proceso de 3 sesiones</h3>
-      <p class="scard-sub">Porque la transformación necesita proceso</p>
-      <div class="scard-divider"></div>
-      <div class="scard-price">60€ <small>bono 3 sesiones grupales</small></div>
-      <ul class="scard-list">
-        <li>3 sesiones de baño de sonido</li><li>Seguimiento personalizado</li>
-        <li>Flexibilidad de fechas</li><li>Ahorro frente al precio individual</li>
-      </ul>
-      <a href="#reservar" class="scard-cta">Reservar →</a>
-    </div>
-    <div class="scard scard-featured reveal d2">
-      <div class="scard-num">03</div>
-      <span class="scard-icon">☽</span>
-      <p class="scard-type">Sesión individual</p>
-      <h3 class="scard-title">Terapia personalizada</h3>
-      <p class="scard-sub">Creada exclusivamente para ti</p>
-      <div class="scard-divider"></div>
-      <div class="scard-price">50€ <small>sesión individual · 60–90 min</small></div>
-      <ul class="scard-list">
-        <li>Atención 100% personalizada</li><li>Cuencos tibetanos sobre el cuerpo</li>
-        <li>Respiración y meditación guiada</li><li>Terapia convencional y emocional</li>
-        <li>Integración y seguimiento</li>
-      </ul>
-      <a href="#reservar" class="scard-cta">Reservar →</a>
-    </div>
-    <div class="scard reveal d3">
-      <div class="scard-num">04</div>
-      <span class="scard-icon">🌿</span>
-      <p class="scard-type">Proceso terapéutico</p>
-      <h3 class="scard-title">Acompañamiento profundo</h3>
-      <p class="scard-sub">Para transformar desde la raíz</p>
-      <div class="scard-divider"></div>
-      <div class="scard-price">150€ <small>bono 4 sesiones completas</small></div>
-      <ul class="scard-list">
-        <li>4h de terapia convencional</li><li>2 sesiones con sound healing</li>
-        <li>Seguimiento entre sesiones</li><li>Herramientas adaptadas a ti</li>
-        <li>Acompañamiento emocional y energético</li>
-      </ul>
-      <a href="#reservar" class="scard-cta">Reservar →</a>
-    </div>
+    <div class="scard reveal"><div class="scard-num">01</div><span class="scard-icon">🌙</span><p class="scard-type">Experiencia grupal</p><h3 class="scard-title">Baño de Sonido</h3><p class="scard-sub">Sesión grupal · grupos reducidos</p><div class="scard-div"></div><div class="scard-price">22€<small>por persona · 33€ en pareja</small></div><ul class="scard-list"><li>Meditación guiada</li><li>Respiración consciente</li><li>Viaje sonoro con cuencos</li><li>Espacio seguro, grupos reducidos</li><li>Acompañamiento antes y después</li></ul><a href="#reservar" class="scard-cta">Reservar →</a></div>
+    <div class="scard reveal d1"><div class="scard-num">02</div><span class="scard-icon">✦</span><p class="scard-type">Bono experiencia</p><h3 class="scard-title">Proceso de 3 sesiones</h3><p class="scard-sub">La transformación necesita proceso</p><div class="scard-div"></div><div class="scard-price">60€<small>bono 3 sesiones grupales</small></div><ul class="scard-list"><li>3 sesiones de baño de sonido</li><li>Seguimiento personalizado</li><li>Flexibilidad de fechas</li><li>Ahorro frente al precio individual</li></ul><a href="#reservar" class="scard-cta">Reservar →</a></div>
+    <div class="scard scard-featured reveal d2"><div class="scard-num">03</div><span class="scard-icon">☽</span><p class="scard-type">Sesión individual</p><h3 class="scard-title">Terapia personalizada</h3><p class="scard-sub">Creada exclusivamente para ti</p><div class="scard-div"></div><div class="scard-price">50€<small>sesión · 60–90 min</small></div><ul class="scard-list"><li>Atención 100% personalizada</li><li>Cuencos tibetanos sobre el cuerpo</li><li>Respiración y meditación guiada</li><li>Terapia convencional y emocional</li><li>Integración y seguimiento</li></ul><a href="#reservar" class="scard-cta">Reservar →</a></div>
+    <div class="scard reveal d3"><div class="scard-num">04</div><span class="scard-icon">🌿</span><p class="scard-type">Proceso terapéutico</p><h3 class="scard-title">Acompañamiento profundo</h3><p class="scard-sub">Para transformar desde la raíz</p><div class="scard-div"></div><div class="scard-price">150€<small>bono 4 sesiones completas</small></div><ul class="scard-list"><li>4h de terapia convencional</li><li>2 sesiones con sound healing</li><li>Seguimiento entre sesiones</li><li>Herramientas adaptadas a ti</li><li>Acompañamiento emocional</li></ul><a href="#reservar" class="scard-cta">Reservar →</a></div>
   </div>
 </section>
 
-<!-- BENEFICIOS -->
+<!-- ══ BENEFICIOS ══ -->
 <section id="beneficios">
   <p class="s-label reveal">¿Qué te llevo a casa?</p>
   <h2 class="s-title reveal">Beneficios del Sound Healing</h2>
   <div class="s-orn reveal"><div class="s-orn-line"></div><span class="s-orn-star">✦</span><div class="s-orn-line r"></div></div>
   <div class="ben-grid">
-    <div class="ben reveal"><span class="ben-icon">🧠</span><p class="ben-title">Estrés & ansiedad</p><p class="ben-text">Reduce el estrés y calma el sistema nervioso profundamente</p></div>
+    <div class="ben reveal"><span class="ben-icon">🧠</span><p class="ben-title">Estrés & ansiedad</p><p class="ben-text">Reduce el estrés y calma el sistema nervioso</p></div>
     <div class="ben reveal d1"><span class="ben-icon">🌙</span><p class="ben-title">Descanso</p><p class="ben-text">Mejora el sueño, el descanso y la concentración</p></div>
     <div class="ben reveal d2"><span class="ben-icon">💛</span><p class="ben-title">Liberación emocional</p><p class="ben-text">Libera bloqueos emocionales y cargas energéticas</p></div>
-    <div class="ben reveal"><span class="ben-icon">✨</span><p class="ben-title">Claridad interior</p><p class="ben-text">Favorece la meditación profunda y la conexión contigo</p></div>
-    <div class="ben reveal d1"><span class="ben-icon">🌿</span><p class="ben-title">Paz y bienestar</p><p class="ben-text">Aumenta la sensación de paz, calma y equilibrio vital</p></div>
-    <div class="ben reveal d2"><span class="ben-icon">🔮</span><p class="ben-title">Reconexión</p><p class="ben-text">Te ayuda a volver a tu esencia y a tu propósito</p></div>
+    <div class="ben reveal"><span class="ben-icon">✨</span><p class="ben-title">Claridad interior</p><p class="ben-text">Favorece la meditación profunda y la conexión</p></div>
+    <div class="ben reveal d1"><span class="ben-icon">🌿</span><p class="ben-title">Paz y bienestar</p><p class="ben-text">Aumenta la sensación de paz y equilibrio vital</p></div>
+    <div class="ben reveal d2"><span class="ben-icon">🔮</span><p class="ben-title">Reconexión</p><p class="ben-text">Te ayuda a volver a tu esencia y tu propósito</p></div>
   </div>
 </section>
 
-<!-- TESTIMONIOS -->
+<!-- ══ TESTIMONIOS ══ -->
 <section id="testimonios">
   <p class="s-label reveal">Experiencias reales</p>
   <h2 class="s-title reveal">Lo que sienten</h2>
   <div class="s-orn reveal"><div class="s-orn-line"></div><span class="s-orn-star">✦</span><div class="s-orn-line r"></div></div>
   <div class="testi-grid">
-    <div class="tcard reveal">
-      <div class="tcard-q">❝</div>
-      <p class="tcard-text">Sentí mucho amor y una paz increíble, salí renovada. Llevaba semanas un poco floja anímicamente y me cambió tanto la perspectiva... conecté conmigo. De verdad tienes magia.</p>
-      <div class="tcard-foot"><div class="tcard-stars">✦ ✦ ✦ ✦ ✦</div><p class="tcard-name">Sesión grupal</p></div>
-    </div>
-    <div class="tcard reveal d1">
-      <div class="tcard-q">❝</div>
-      <p class="tcard-text">No tengo palabras exactas para describir lo que acabo de vivir, pero sí sé que ha sido algo único, real y profundamente transformador. Fue como un viaje hacia dentro.</p>
-      <div class="tcard-foot"><div class="tcard-stars">✦ ✦ ✦ ✦ ✦</div><p class="tcard-name">Sesión individual</p></div>
-    </div>
-    <div class="tcard reveal d2">
-      <div class="tcard-q">❝</div>
-      <p class="tcard-text">Me sentí liberada, algunas emociones se liberaron, sentí tranquilidad y mucho relax. Podía sentirme en paz. Era la primera vez y lo recomiendo muchísimo.</p>
-      <div class="tcard-foot"><div class="tcard-stars">✦ ✦ ✦ ✦ ✦</div><p class="tcard-name">Primera vez</p></div>
-    </div>
+    <div class="tcard reveal"><div class="tcard-q">❝</div><p class="tcard-text">Sentí mucho amor y una paz increíble, salí renovada. Me cambió tanto la perspectiva... conecté conmigo. De verdad tienes magia.</p><div class="tcard-foot"><div class="tcard-stars">✦ ✦ ✦ ✦ ✦</div><p class="tcard-name">Sesión grupal</p></div></div>
+    <div class="tcard reveal d1"><div class="tcard-q">❝</div><p class="tcard-text">No tengo palabras exactas para describir lo que acabo de vivir, pero sí sé que ha sido algo único, real y profundamente transformador.</p><div class="tcard-foot"><div class="tcard-stars">✦ ✦ ✦ ✦ ✦</div><p class="tcard-name">Sesión individual</p></div></div>
+    <div class="tcard reveal d2"><div class="tcard-q">❝</div><p class="tcard-text">Me sentí liberada, sentí tranquilidad y mucho relax. Podía sentirme en paz. Era la primera vez y lo recomiendo muchísimo.</p><div class="tcard-foot"><div class="tcard-stars">✦ ✦ ✦ ✦ ✦</div><p class="tcard-name">Primera vez</p></div></div>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- ══ FAQ ══ -->
 <section id="faq">
   <p class="s-label reveal">Preguntas frecuentes</p>
   <h2 class="s-title reveal">¿Cómo funciona?</h2>
   <div class="s-orn reveal"><div class="s-orn-line"></div><span class="s-orn-star">✦</span><div class="s-orn-line r"></div></div>
   <div class="faq-inner">
-    <div class="faq-item reveal">
-      <button class="faq-q"><span>¿Cómo es una sesión?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Comenzamos con un espacio para hablar y conectar contigo. Después entramos en la experiencia sonora a través de respiración consciente, meditación guiada e instrumentos vibracionales. En las sesiones individuales, los cuencos pueden colocarse sobre el cuerpo —siempre con tu consentimiento—. Al finalizar, un espacio de integración y acompañamiento.</div></div>
-    </div>
-    <div class="faq-item reveal">
-      <button class="faq-q"><span>¿Necesito experiencia previa?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">No. No necesitas saber meditar ni tener experiencia previa. Solo venir con ropa cómoda y permitirte recibir la experiencia.</div></div>
-    </div>
-    <div class="faq-item reveal">
-      <button class="faq-q"><span>¿Diferencia entre sesión grupal e individual?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">La sesión grupal es una experiencia compartida donde el sonido y la energía del grupo crean un espacio de conexión y calma, con grupos reducidos. La sesión individual es mucho más íntima y personalizada, adaptada completamente a ti y a lo que necesitas trabajar en este momento.</div></div>
-    </div>
-    <div class="faq-item reveal">
-      <button class="faq-q"><span>¿Qué puedo sentir durante la sesión?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Cada experiencia es diferente. Puedes sentir relajación profunda, liberación emocional, paz mental, sensación de ligereza, calor o vibración energética, claridad y conexión contigo. Muchas personas lo describen como "volver a casa".</div></div>
-    </div>
-    <div class="faq-item reveal">
-      <button class="faq-q"><span>¿Cuánto dura la sesión?</span><span class="faq-icon">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Las sesiones suelen durar entre 60 y 90 minutos, dependiendo del formato y del trabajo terapéutico realizado.</div></div>
-    </div>
+    <div class="faq-item reveal"><button class="faq-q"><span>¿Cómo es una sesión?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Comenzamos con un espacio para hablar y conectar contigo. Después entramos en la experiencia sonora: respiración consciente, meditación guiada e instrumentos vibracionales. En sesiones individuales los cuencos pueden colocarse sobre el cuerpo —siempre con tu consentimiento—. Al finalizar, un espacio de integración.</div></div></div>
+    <div class="faq-item reveal"><button class="faq-q"><span>¿Necesito experiencia previa?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">No. Solo venir con ropa cómoda y permitirte recibir la experiencia.</div></div></div>
+    <div class="faq-item reveal"><button class="faq-q"><span>¿Diferencia entre sesión grupal e individual?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">La grupal es una experiencia compartida con grupos reducidos. La individual es mucho más íntima, adaptada completamente a ti y a lo que necesitas trabajar en este momento.</div></div></div>
+    <div class="faq-item reveal"><button class="faq-q"><span>¿Qué puedo sentir durante la sesión?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Cada experiencia es diferente: relajación profunda, liberación emocional, paz mental, ligereza, calor o vibración energética. Muchas personas lo describen como "volver a casa".</div></div></div>
+    <div class="faq-item reveal"><button class="faq-q"><span>¿Cuánto dura la sesión?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Entre 60 y 90 minutos, dependiendo del formato y del trabajo terapéutico.</div></div></div>
   </div>
 </section>
 
-<!-- RESERVAR -->
+<!-- ══ RESERVAR ══ -->
 <section id="reservar">
   <div class="reservar-orb"></div>
   <p class="s-label reveal">Empieza tu proceso</p>
@@ -530,34 +461,34 @@ footer{background:var(--dark);padding:64px 60px 36px;border-top:1px solid rgba(2
   <p class="reveal">Escríbeme y cuéntame cómo estás.<br>Juntas encontramos la sesión que necesitas.</p>
   <div class="cta-row reveal">
     <a href="https://wa.me/34682840053?text=Hola%20Anna!%20Me%20gustaría%20saber%20más%20sobre%20las%20sesiones%20🌙" target="_blank" class="btn-wa">
-      <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#5ee880;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:#5ee880;flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       WhatsApp
     </a>
     <a href="https://www.instagram.com/soundhealingwithanna/" target="_blank" class="btn-ig">
-      <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:var(--gold);flex-shrink:0"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      <svg viewBox="0 0 24 24" style="width:15px;height:15px;fill:var(--gold);flex-shrink:0"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       Instagram
     </a>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══ FOOTER ══ -->
 <footer>
   <span class="footer-moon">☽</span>
   <div class="footer-logo">SOUND HEALING 222</div>
   <p class="footer-tag">Sonido que sana · Energía que transforma · Alma que recuerda</p>
   <nav class="footer-nav">
-    <a href="#sobre">Anna</a><span class="footer-sep">·</span>
-    <a href="#galeria-anna">Galería</a><span class="footer-sep">·</span>
+    <a href="sobre-mi.html">Sobre mí</a><span class="footer-sep">·</span>
     <a href="#sesiones">Sesiones</a><span class="footer-sep">·</span>
     <a href="#testimonios">Experiencias</a><span class="footer-sep">·</span>
-    <a href="https://www.instagram.com/_soundhealing222/" target="_blank">Instagram</a><span class="footer-sep">·</span>
+    <a href="https://www.instagram.com/soundhealingwithanna/" target="_blank">Instagram</a><span class="footer-sep">·</span>
     <a href="https://wa.me/34682840053" target="_blank">WhatsApp</a>
   </nav>
-  <div class="footer-divider"></div>
+  <div class="footer-div"></div>
   <p class="footer-copy">© 2026 Sound Healing 222 · Anna Cano · Barcelona</p>
   <p class="footer-credit">Página web diseñada por <a href="https://www.tecnosoluciones.info/web-seo.html" target="_blank">TecnoSoluciones BCN</a></p>
 </footer>
 
+<!-- FLOAT WA -->
 <a href="https://wa.me/34682840053?text=Hola%20Anna!%20Me%20gustaría%20saber%20más%20sobre%20las%20sesiones%20🌙" target="_blank" class="wa-float">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
@@ -565,35 +496,11 @@ footer{background:var(--dark);padding:64px 60px 36px;border-top:1px solid rgba(2
 <script>
 // STARS
 const C=document.getElementById('stars'),X=C.getContext('2d');
-let W,H,stars=[];
-function resize(){W=C.width=innerWidth;H=C.height=innerHeight;buildStars()}
-function buildStars(){
-  stars=[];const n=Math.floor(W*H/5500);
-  for(let i=0;i<n;i++){
-    const s=Math.random();
-    stars.push({x:Math.random()*W,y:Math.random()*H,
-      r:s<.7?.2+Math.random()*.4:s<.92?.5+Math.random()*.4:.9+Math.random()*.3,
-      base:.1+Math.random()*.4,phase:Math.random()*Math.PI*2,
-      speed:.003+Math.random()*.008,gold:Math.random()<.15});
-  }
-}
+let W,H,ST=[];
+function resize(){W=C.width=innerWidth;H=C.height=innerHeight;buildS()}
+function buildS(){ST=[];const n=Math.floor(W*H/5500);for(let i=0;i<n;i++){const s=Math.random();ST.push({x:Math.random()*W,y:Math.random()*H,r:s<.7?.2+Math.random()*.4:s<.92?.5+Math.random()*.4:.9+Math.random()*.3,base:.1+Math.random()*.4,ph:Math.random()*Math.PI*2,sp:.003+Math.random()*.008,g:Math.random()<.15})}}
 resize();window.addEventListener('resize',resize);
-(function loop(){
-  X.clearRect(0,0,W,H);
-  stars.forEach(s=>{
-    s.phase+=s.speed;
-    const o=s.base*(0.4+0.6*Math.abs(Math.sin(s.phase)));
-    X.beginPath();X.arc(s.x,s.y,s.r,0,Math.PI*2);
-    X.fillStyle=s.gold?`rgba(201,168,76,${o})`:`rgba(245,237,216,${o})`;X.fill();
-    if(s.r>.85){
-      X.strokeStyle=s.gold?`rgba(201,168,76,${o*.5})`:`rgba(245,237,216,${o*.5})`;
-      X.lineWidth=.4;const l=s.r*2.6;
-      X.beginPath();X.moveTo(s.x-l,s.y);X.lineTo(s.x+l,s.y);X.stroke();
-      X.beginPath();X.moveTo(s.x,s.y-l);X.lineTo(s.x,s.y+l);X.stroke();
-    }
-  });
-  requestAnimationFrame(loop);
-})();
+(function loop(){X.clearRect(0,0,W,H);ST.forEach(s=>{s.ph+=s.sp;const o=s.base*(0.4+0.6*Math.abs(Math.sin(s.ph)));X.beginPath();X.arc(s.x,s.y,s.r,0,Math.PI*2);X.fillStyle=s.g?`rgba(201,168,76,${o})`:`rgba(245,237,216,${o})`;X.fill();if(s.r>.85){X.strokeStyle=s.g?`rgba(201,168,76,${o*.5})`:`rgba(245,237,216,${o*.5})`;X.lineWidth=.4;const l=s.r*2.6;X.beginPath();X.moveTo(s.x-l,s.y);X.lineTo(s.x+l,s.y);X.stroke();X.beginPath();X.moveTo(s.x,s.y-l);X.lineTo(s.x,s.y+l);X.stroke()}});requestAnimationFrame(loop)})();
 
 // NAV
 const nav=document.getElementById('nav');
@@ -609,28 +516,22 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 // FAQ
 document.querySelectorAll('.faq-q').forEach(btn=>{
   btn.addEventListener('click',()=>{
-    const open=btn.classList.contains('open');
+    const o=btn.classList.contains('open');
     document.querySelectorAll('.faq-q.open').forEach(b=>{b.classList.remove('open');b.nextElementSibling.style.maxHeight='0'});
-    if(!open){btn.classList.add('open');btn.nextElementSibling.style.maxHeight=btn.nextElementSibling.scrollHeight+'px'}
+    if(!o){btn.classList.add('open');btn.nextElementSibling.style.maxHeight=btn.nextElementSibling.scrollHeight+'px'}
   });
 });
 
 // LIGHTBOX
-const lbImgs=['1.png','2.png','3.png','4.png','5.png','6.png'];
-let lbIdx=0;
-function openLb(i){lbIdx=i;document.getElementById('lb-img').src=lbImgs[i];document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden'}
+const LBI=['1.png','2.png','3.png','4.png','5.png','6.png'];
+let lbi=0;
+function openLb(i){lbi=i;document.getElementById('lb-img').src=LBI[i];document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden'}
 function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow=''}
-function closeLbOutside(e){if(e.target===document.getElementById('lb'))closeLb()}
-function lbNav(d){lbIdx=(lbIdx+d+lbImgs.length)%lbImgs.length;document.getElementById('lb-img').src=lbImgs[lbIdx]}
+function lbNav(d){lbi=(lbi+d+LBI.length)%LBI.length;document.getElementById('lb-img').src=LBI[lbi]}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')lbNav(1);if(e.key==='ArrowLeft')lbNav(-1)});
 
 // VIDEOS
-function toggleVideo(id,btn){
-  const v=document.getElementById(id);
-  if(v.paused){v.play();btn.style.display='none'}
-  else{v.pause();btn.style.display='flex'}
-  v.addEventListener('pause',()=>btn.style.display='flex',{once:true});
-}
+function playVid(id,btn){const v=document.getElementById(id);if(v.paused){v.play();btn.style.display='none';v.addEventListener('pause',()=>btn.style.display='flex',{once:true})}else{v.pause()}}
 </script>
 </body>
 </html>
