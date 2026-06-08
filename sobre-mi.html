@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre Mí — Anna Cano · Sound Healing 222</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#c9a84c;--gold-dim:#8a6a28;--gold-faint:rgba(201,168,76,.07);
+  --dark:#080604;--dark2:#120d06;--dark3:#1c1509;--dark4:#221b0c;
+  --cream:#f5edd8;--cream-dim:#c4aa86;
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--cream-dim);font-family:'Cormorant Garamond',serif;overflow-x:hidden}
+#stars{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:999;padding:22px 60px;display:flex;justify-content:space-between;align-items:center;transition:all .5s}
+nav.scrolled{background:rgba(8,6,4,.96);backdrop-filter:blur(20px);padding:14px 60px;border-bottom:1px solid rgba(201,168,76,.1)}
+.nav-logo{font-family:'Cinzel',serif;color:var(--gold);font-size:1.05rem;letter-spacing:4px;display:flex;align-items:center;gap:9px;text-decoration:none;flex-shrink:0;white-space:nowrap}
+.nav-moon{display:inline-block;transform:scaleX(-1)}
+.nav-menu{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-menu a{color:var(--cream);text-decoration:none;font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;transition:color .3s;position:relative;white-space:nowrap}
+.nav-menu a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.nav-menu a:hover{color:var(--gold)}
+.nav-menu a:hover::after{width:100%}
+.nav-btn{padding:9px 22px;border:1px solid var(--gold);color:var(--gold)!important;transition:all .3s!important}
+.nav-btn:hover{background:var(--gold);color:var(--dark)!important}
+.nav-btn::after{display:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:1px;background:var(--gold);display:block}
+
+/* HERO SOBRE */
+.sobre-hero{position:relative;min-height:55vh;display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:140px 40px 80px;overflow:hidden;z-index:1}
+.sobre-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 20%,#2a1604 0%,#100a03 50%,#080604 100%)}
+.sobre-hero-vign{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,#080604 100%)}
+.sobre-hero-orb{position:absolute;width:600px;height:600px;top:-100px;left:50%;transform:translateX(-50%);border-radius:50%;filter:blur(80px);background:radial-gradient(circle,rgba(201,168,76,.07),transparent 65%);pointer-events:none}
+.sobre-hero-inner{position:relative;z-index:2}
+.hero-eyebrow{font-family:'Cinzel',serif;font-size:.78rem;letter-spacing:7px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:block;opacity:.85}
+.hero-name{font-family:'Cinzel',serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:400;color:var(--cream);line-height:.95;text-shadow:0 0 60px rgba(201,168,76,.1);margin-bottom:16px}
+.hero-roles{font-size:1.1rem;color:var(--cream-dim);letter-spacing:5px;font-weight:300}
+.hero-roles span{color:var(--gold);margin:0 8px;opacity:.5}
+
+/* ORNAMENT */
+.orn{display:flex;align-items:center;gap:14px;max-width:220px;margin:0 auto}
+.orn-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--gold-dim))}
+.orn-line.r{background:linear-gradient(to left,transparent,var(--gold-dim))}
+.orn-star{color:var(--gold);font-size:.7rem;opacity:.7}
+.section-orn{margin-bottom:60px}
+
+/* INTRO SPLIT */
+.intro{position:relative;z-index:1;padding:0 60px 100px}
+.intro-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:420px 1fr;gap:80px;align-items:start}
+.photo-wrap{position:relative;top:-80px}
+.photo-frame{position:relative}
+.photo-frame::before{content:'';position:absolute;top:-10px;left:-10px;right:10px;bottom:10px;border:1px solid rgba(201,168,76,.14);pointer-events:none;z-index:2}
+.photo-frame::after{content:'';position:absolute;top:-18px;left:-18px;right:18px;bottom:18px;border:1px solid rgba(201,168,76,.05);pointer-events:none;z-index:2}
+.photo-frame img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;filter:brightness(.92) saturate(.88);display:block}
+.photo-quote{position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--dark2);border:1px solid rgba(201,168,76,.2);padding:14px 28px;font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--cream-dim);letter-spacing:1px;z-index:3;text-align:center;width:max-content;max-width:380px}
+.intro-text{padding-top:20px}
+.intro-lead{font-size:1.4rem;line-height:1.85;color:var(--cream);font-weight:300;font-style:italic;margin-bottom:40px;border-left:2px solid var(--gold-dim);padding-left:28px}
+
+/* SECTIONS */
+.page-section{position:relative;z-index:1;padding:80px 60px}
+.page-section.alt{background:var(--dark2)}
+.sec-label{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;opacity:.8}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--cream);font-style:italic;margin-bottom:36px}
+.sec-divider{width:40px;height:1px;background:var(--gold-dim);margin-bottom:36px;opacity:.5}
+.sec-text p{font-size:1.12rem;line-height:2.05;color:var(--cream-dim);margin-bottom:20px;font-weight:300}
+.sec-text p strong{color:var(--cream);font-weight:400}
+.sec-inner{max-width:1080px;margin:0 auto}
+
+/* CAMINO — two col */
+.camino-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+
+/* LUGARES */
+.lugares-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.lugar{padding:8px 20px;border:1px solid rgba(201,168,76,.18);font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase;background:var(--gold-faint);transition:all .3s}
+.lugar:hover{color:var(--gold);border-color:var(--gold-dim)}
+
+/* ENFOQUE */
+.enfoque-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+.enfoque-item{padding:32px 28px;border:1px solid rgba(201,168,76,.1);background:rgba(201,168,76,.03);text-align:center;transition:border-color .3s}
+.enfoque-item:hover{border-color:rgba(201,168,76,.25)}
+.enfoque-icon{font-size:1.8rem;margin-bottom:14px;display:block}
+.enfoque-title{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:3px;color:var(--gold);text-transform:uppercase;line-height:1.5}
+
+/* FORMACION */
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:8px}
+.form-card{padding:32px 30px;border:1px solid rgba(201,168,76,.1);background:var(--dark3);transition:all .4s}
+.form-card:hover{border-color:rgba(201,168,76,.22);transform:translateY(-3px)}
+.form-area{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:10px;opacity:.8}
+.form-title{font-size:1.2rem;color:var(--cream);font-weight:300;font-style:italic;line-height:1.4}
+
+/* PROPÓSITO */
+.proposito-wrap{max-width:700px;margin:0 auto;text-align:center}
+.proposito-wrap p{font-size:1.18rem;line-height:2.1;color:var(--cream-dim);font-weight:300;margin-bottom:20px}
+.proposito-wrap p strong{color:var(--cream);font-weight:400}
+
+/* FRASE FINAL */
+.frase{position:relative;z-index:1;padding:100px 60px;background:radial-gradient(ellipse at 50% 50%,#2a1604 0%,var(--dark) 70%);text-align:center}
+.frase-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:300;font-style:italic;color:var(--cream);max-width:720px;margin:0 auto 50px;line-height:1.7}
+.frase-gold{color:var(--gold)}
+.cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-gold{display:inline-block;padding:15px 42px;border:1px solid var(--gold);color:var(--gold);font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;position:relative;overflow:hidden;transition:color .4s}
+.btn-gold::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.btn-gold:hover{color:var(--dark)}
+.btn-gold:hover::before{transform:translateY(0)}
+.btn-gold span{position:relative;z-index:1}
+.btn-ghost{display:inline-block;padding:15px 42px;border:1px solid rgba(245,237,216,.15);color:var(--cream-dim);font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.btn-ghost:hover{border-color:rgba(245,237,216,.35);color:var(--cream)}
+
+/* FOOTER */
+footer{background:var(--dark);padding:50px 60px 30px;border-top:1px solid rgba(201,168,76,.07);text-align:center}
+.footer-moon{display:inline-block;transform:scaleX(-1);font-size:1.4rem;margin-bottom:14px;color:var(--gold);opacity:.7}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);letter-spacing:5px;margin-bottom:6px}
+.footer-tag{font-size:.76rem;color:var(--cream-dim);letter-spacing:3px;opacity:.45;margin-bottom:28px}
+.footer-nav{display:flex;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.footer-nav a{color:var(--cream-dim);text-decoration:none;font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;opacity:.5;transition:all .3s}
+.footer-nav a:hover{color:var(--gold);opacity:1}
+.footer-sep{color:rgba(201,168,76,.2);font-size:.7rem;padding:5px 0}
+.footer-copy{font-size:.68rem;color:var(--gold-dim);letter-spacing:2px;opacity:.4;margin-bottom:8px}
+.footer-credit{font-size:.65rem;color:rgba(201,168,76,.28);letter-spacing:1.5px}
+.footer-credit a{color:rgba(201,168,76,.45);text-decoration:none;transition:color .3s}
+.footer-credit a:hover{color:var(--gold)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+.reveal.visible{opacity:1;transform:none}
+
+/* FLOAT */
+.wa-float{position:fixed;bottom:32px;right:32px;z-index:500;width:52px;height:52px;background:#128c7e;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 28px rgba(18,140,126,.45);text-decoration:none;transition:all .3s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:24px;height:24px;fill:white}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .intro-grid,.camino-grid{grid-template-columns:1fr}
+  .photo-wrap{top:0;max-width:440px;margin:0 auto}
+  .enfoque-grid{grid-template-columns:repeat(2,1fr)}
+  .form-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  nav.scrolled{padding:12px 20px}
+  .nav-menu{display:none;position:fixed;inset:0;background:rgba(8,6,4,.97);flex-direction:column;justify-content:center;align-items:center;gap:32px}
+  .nav-menu.open{display:flex}
+  .nav-menu a{font-size:1rem;letter-spacing:4px}
+  .hamburger{display:flex}
+  .intro,.page-section,.frase,footer{padding-left:24px!important;padding-right:24px!important}
+  .sobre-hero{padding:120px 24px 70px}
+  .enfoque-grid{grid-template-columns:1fr}
+  .photo-quote{white-space:normal;width:90%;left:5%;transform:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo"><span class="nav-moon">☽</span> Sound Healing 222</a>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="index.html#galeria-anna">Galería</a></li>
+    <li><a href="index.html#sesiones">Sesiones</a></li>
+    <li><a href="index.html#testimonios">Experiencias</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#reservar" class="nav-btn">Reservar</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="sobre-hero">
+  <div class="sobre-hero-bg"></div>
+  <div class="sobre-hero-vign"></div>
+  <div class="sobre-hero-orb"></div>
+  <div class="sobre-hero-inner reveal">
+    <span class="hero-eyebrow">Sound Healing 222</span>
+    <h1 class="hero-name">Anna Cano</h1>
+    <p class="hero-roles">
+      Sound Healing<span>·</span>Voz<span>·</span>Vibración<span>·</span>Presencia
+    </p>
+  </div>
+</div>
+
+<!-- INTRO + FOTO -->
+<section class="intro">
+  <div class="intro-grid">
+    <div class="photo-wrap reveal">
+      <div class="photo-frame">
+        <img src="yo.png" alt="Anna Cano — Sound Healer Barcelona">
+        <div class="photo-quote">
+          "Cuando la mente se aquieta,<br>el sonido abre el camino de regreso a casa."
+        </div>
+      </div>
+    </div>
+    <div class="intro-text reveal d1">
+      <p class="intro-lead">Acompaño a las personas a reconectar consigo mismas a través del sonido, la voz y la vibración.</p>
+      <div class="sec-text">
+        <p>Creo espacios donde el cuerpo puede relajarse, la mente encontrar calma y el corazón abrirse a una escucha más profunda.</p>
+        <p>Cada sesión nace desde la <strong>escucha, la presencia y el cuidado</strong>, ofreciendo un lugar donde cada persona pueda simplemente ser.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MI CAMINO -->
+<section class="page-section alt">
+  <div class="sec-inner">
+    <p class="s-label reveal" style="font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;opacity:.8">Anna Cano</p>
+    <h2 class="sec-title reveal">Mi camino</h2>
+    <div class="sec-divider reveal"></div>
+    <div class="camino-grid">
+      <div class="sec-text reveal">
+        <p>Mi relación con el sonido nació mucho antes de descubrir el Sound Healing.</p>
+        <p>Desde muy joven me formé en <strong>música clásica</strong>, desarrollando una sensibilidad especial hacia la voz, la escucha y el poder transformador de la vibración.</p>
+        <p>Con el tiempo comprendí que el sonido podía ser mucho más que música: podía convertirse en una herramienta para <strong>volver al presente, conectar con uno mismo</strong> y cultivar bienestar interior.</p>
+      </div>
+      <div class="sec-text reveal d1">
+        <p>Esta búsqueda me llevó a formarme en <strong>Sound Healing en India y Tailandia</strong>, explorando la voz, la respiración y los instrumentos vibracionales como caminos hacia estados profundos de calma, equilibrio y reconexión.</p>
+        <p>Mi formación como <strong>Educadora Social</strong> me permitió comprender la importancia de crear espacios seguros, respetuosos y sostenedores.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section class="page-section">
+  <div class="sec-inner">
+    <p class="s-label reveal" style="font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;opacity:.8">Mundo</p>
+    <h2 class="sec-title reveal">Mi experiencia</h2>
+    <div class="sec-divider reveal"></div>
+    <div class="sec-text reveal" style="max-width:680px;margin-bottom:36px">
+      <p>He compartido sesiones y experiencias de sonido en diferentes partes del mundo, llevando esta práctica a espacios íntimos, retiros y centros de bienestar.</p>
+      <p>También he colaborado con hoteles, retiros y espacios dedicados al bienestar y el crecimiento personal.</p>
+    </div>
+    <div class="lugares-list reveal d1">
+      <span class="lugar">India</span>
+      <span class="lugar">Tailandia</span>
+      <span class="lugar">Sri Lanka</span>
+      <span class="lugar">Barcelona</span>
+      <span class="lugar">Retiros</span>
+      <span class="lugar">Centros de bienestar</span>
+    </div>
+  </div>
+</section>
+
+<!-- MI ENFOQUE -->
+<section class="page-section alt">
+  <div class="sec-inner">
+    <p class="s-label reveal" style="font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;opacity:.8">Herramientas</p>
+    <h2 class="sec-title reveal">Mi enfoque</h2>
+    <div class="sec-divider reveal"></div>
+    <div class="sec-text reveal" style="max-width:600px;margin-bottom:44px">
+      <p>Durante las sesiones combino diferentes elementos para crear una experiencia inmersiva y transformadora. <strong>Cada encuentro es único</strong> y se adapta a la energía y necesidades del momento.</p>
+    </div>
+    <div class="enfoque-grid">
+      <div class="enfoque-item reveal"><span class="enfoque-icon">🎵</span><p class="enfoque-title">Voz terapéutica</p></div>
+      <div class="enfoque-item reveal d1"><span class="enfoque-icon">🔔</span><p class="enfoque-title">Cuencos tibetanos</p></div>
+      <div class="enfoque-item reveal d2"><span class="enfoque-icon">🥁</span><p class="enfoque-title">Instrumentos vibracionales</p></div>
+      <div class="enfoque-item reveal"><span class="enfoque-icon">🌬️</span><p class="enfoque-title">Respiración consciente</p></div>
+      <div class="enfoque-item reveal d1"><span class="enfoque-icon">🧘</span><p class="enfoque-title">Meditación guiada</p></div>
+      <div class="enfoque-item reveal d2"><span class="enfoque-icon">🤍</span><p class="enfoque-title">Presencia & escucha profunda</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMACIÓN -->
+<section class="page-section">
+  <div class="sec-inner">
+    <p class="s-label reveal" style="font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;opacity:.8">Estudios</p>
+    <h2 class="sec-title reveal">Formación</h2>
+    <div class="sec-divider reveal"></div>
+    <div class="form-grid">
+      <div class="form-card reveal">
+        <p class="form-area">Música & Voz</p>
+        <p class="form-title">Formación en Música Clásica con especialidad en voz</p>
+      </div>
+      <div class="form-card reveal d1">
+        <p class="form-area">Educación</p>
+        <p class="form-title">Grado en Educación Social</p>
+      </div>
+      <div class="form-card reveal d2">
+        <p class="form-area">Sound Healing</p>
+        <p class="form-title">Formación especializada en Sound Healing en India y Tailandia</p>
+      </div>
+      <div class="form-card reveal d3">
+        <p class="form-area">Desarrollo personal</p>
+        <p class="form-title">Actualmente en formación en Terapia Gestalt</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPÓSITO -->
+<section class="page-section alt">
+  <div class="sec-inner">
+    <p class="s-label reveal" style="font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:6px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;text-align:center;opacity:.8">Intención</p>
+    <h2 class="sec-title reveal" style="text-align:center">Mi propósito</h2>
+    <div class="orn section-orn reveal"><div class="orn-line"></div><span class="orn-star">✦</span><div class="orn-line r"></div></div>
+    <div class="proposito-wrap">
+      <p class="reveal">Mi intención es ofrecer experiencias que ayuden a <strong>disminuir el ruido externo</strong> para poder escuchar lo esencial.</p>
+      <p class="reveal d1"><strong>Momentos de pausa.</strong><br>Momentos de presencia.<br>Momentos para recordar que el bienestar, la calma y la conexión <strong>ya habitan dentro de nosotros.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- FRASE FINAL + CTA -->
+<section class="frase">
+  <div class="orn section-orn reveal" style="margin-bottom:50px"><div class="orn-line"></div><span class="orn-star">✦</span><div class="orn-line r"></div></div>
+  <p class="frase-text reveal">
+    <span class="frase-gold">❝</span> El sonido nos recuerda aquello que el <span class="frase-gold">corazón</span> ya sabe. <span class="frase-gold">❞</span>
+  </p>
+  <div class="cta-row reveal">
+    <a href="index.html#reservar" class="btn-gold"><span>Reservar sesión</span></a>
+    <a href="index.html" class="btn-ghost">Volver al inicio</a>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-moon">☽</span>
+  <div class="footer-logo">SOUND HEALING 222</div>
+  <p class="footer-tag">Sonido que sana · Energía que transforma · Alma que recuerda</p>
+  <nav class="footer-nav">
+    <a href="index.html">Inicio</a><span class="footer-sep">·</span>
+    <a href="index.html#sesiones">Sesiones</a><span class="footer-sep">·</span>
+    <a href="https://www.instagram.com/_soundhealing222/" target="_blank">Instagram</a><span class="footer-sep">·</span>
+    <a href="https://wa.me/34682840053" target="_blank">WhatsApp</a>
+  </nav>
+  <p class="footer-copy">© 2026 Sound Healing 222 · Anna Cano · Barcelona</p>
+  <p class="footer-credit">Página web diseñada por <a href="https://www.tecnosoluciones.info/web-seo.html" target="_blank">TecnoSoluciones BCN</a></p>
+</footer>
+
+<a href="https://wa.me/34682840053?text=Hola%20Anna!%20Me%20gustaría%20saber%20más%20sobre%20las%20sesiones%20🌙" target="_blank" class="wa-float">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// STARS
+const C=document.getElementById('stars'),X=C.getContext('2d');
+let W,H,stars=[];
+function resize(){W=C.width=innerWidth;H=C.height=innerHeight;buildStars()}
+function buildStars(){
+  stars=[];const n=Math.floor(W*H/5500);
+  for(let i=0;i<n;i++){
+    const s=Math.random();
+    stars.push({x:Math.random()*W,y:Math.random()*H,
+      r:s<.7?.2+Math.random()*.4:s<.92?.5+Math.random()*.4:.9+Math.random()*.3,
+      base:.1+Math.random()*.4,phase:Math.random()*Math.PI*2,
+      speed:.003+Math.random()*.008,gold:Math.random()<.15});
+  }
+}
+resize();window.addEventListener('resize',resize);
+(function loop(){
+  X.clearRect(0,0,W,H);
+  stars.forEach(s=>{
+    s.phase+=s.speed;
+    const o=s.base*(0.4+0.6*Math.abs(Math.sin(s.phase)));
+    X.beginPath();X.arc(s.x,s.y,s.r,0,Math.PI*2);
+    X.fillStyle=s.gold?`rgba(201,168,76,${o})`:`rgba(245,237,216,${o})`;X.fill();
+    if(s.r>.85){
+      X.strokeStyle=s.gold?`rgba(201,168,76,${o*.5})`:`rgba(245,237,216,${o*.5})`;
+      X.lineWidth=.4;const l=s.r*2.6;
+      X.beginPath();X.moveTo(s.x-l,s.y);X.lineTo(s.x+l,s.y);X.stroke();
+      X.beginPath();X.moveTo(s.x,s.y-l);X.lineTo(s.x,s.y+l);X.stroke();
+    }
+  });
+  requestAnimationFrame(loop);
+})();
+
+// NAV
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+const hb=document.getElementById('hamburger'),menu=document.getElementById('navMenu');
+hb.addEventListener('click',()=>menu.classList.toggle('open'));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+
+// REVEAL
+const obs=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');obs.unobserve(i.target)}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
